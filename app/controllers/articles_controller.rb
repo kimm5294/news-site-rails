@@ -8,4 +8,8 @@ class ArticlesController < ApplicationController
   def espn
     espn_render
   end
+
+  def natgeo
+    natgeo_render
+  end
 end

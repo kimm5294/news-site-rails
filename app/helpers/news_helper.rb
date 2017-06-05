@@ -18,4 +18,14 @@ module NewsHelper
 
     render json: articles
   end
+
+  def natgeo_render
+    uri = URI.parse("https://newsapi.org/v1/articles?source=national-geographic&sortBy=top&apiKey=#{ENV['NEWS_KEY']}")
+    response = Net::HTTP.get_response(uri)
+    body = JSON.parse(response.body)
+    articles = body["articles"]
+
+    render json: articles
+  end
+
 end
