@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   get '/articles/hacker', to: 'articles#hacker'
   get '/articles/espn', to: 'articles#espn'
+  get '/articles/natgeo', to: 'articles#natgeo'
 end
