@@ -12,4 +12,16 @@ class ArticlesController < ApplicationController
   def natgeo
     natgeo_render
   end
+
+  def cnn
+    cnn_render
+  end
+
+  def bbc
+    bbc_render
+  end
+
+  def wsj
+    wsj_render
+  end
 end
