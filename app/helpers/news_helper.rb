@@ -28,4 +28,30 @@ module NewsHelper
     render json: articles
   end
 
+  def cnn_render
+    uri = URI.parse("https://newsapi.org/v1/articles?source=cnn&sortBy=top&apiKey=#{ENV['NEWS_KEY']}")
+    response = Net::HTTP.get_response(uri)
+    body = JSON.parse(response.body)
+    articles = body["articles"]
+
+    render json: articles
+  end
+
+  def bbc_render
+    uri = URI.parse("https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=#{ENV['NEWS_KEY']}")
+    response = Net::HTTP.get_response(uri)
+    body = JSON.parse(response.body)
+    articles = body["articles"]
+
+    render json: articles
+  end
+
+  def wsj_render
+    uri = URI.parse("https://newsapi.org/v1/articles?source=the-wall-street-journal&sortBy=top&apiKey=#{ENV['NEWS_KEY']}")
+    response = Net::HTTP.get_response(uri)
+    body = JSON.parse(response.body)
+    articles = body["articles"]
+
+    render json: articles
+  end
 end
